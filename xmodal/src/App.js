@@ -3,15 +3,16 @@ import {useState} from "react";
 
 
 function App() {
-  const [modal, setModal] = useState("none");
+  const [modal, setModal] = useState(false);
 
   const handleClick = () => {
-    setModal("block");
+    setModal(true);
   };
 
   const handleModalClick = (e) => {
+    console.log(e.target.className)
     if (e.target.className === "modal")
-      setModal("none");
+      setModal(false);
   };
 
   const handleSubmit = (e) => {
@@ -42,9 +43,9 @@ function App() {
           Open Form
         </button>
       </div>
+      {modal && 
       <div
         className="modal"
-        style={{ display: `${modal}` }}
         onClick={handleModalClick}
       >
         <div className="modal-content">
@@ -100,6 +101,7 @@ function App() {
           </form>
         </div>
       </div>
+      }
     </>
   );
 }
