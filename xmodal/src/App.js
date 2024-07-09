@@ -10,7 +10,8 @@ function App() {
   };
 
   const handleModalClick = (e) => {
-    if (e.target.className === "modal") setModal("none");
+    if (e.target.className === "modal")
+      setModal("none");
   };
 
   const handleSubmit = (e) => {
